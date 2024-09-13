@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Satyam Kumar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+
+    <header>
+        <div class="menu">
+            <img src="menu.svg" alt="" class="menuimg">
+        </div>
+        <h2 class="logo"><span>S</span>atyam.</h2>
+        <nav class="navigation">
+            <a href="">Home</a>
+            <a href="About.html">About</a>
+
+            <a href="#" class="soon">Blog</a>
+            <a href="About.html">Contact</a>
+            <a href="https://drive.google.com/file/d/1xNKcf_XQ4Xv0mxYue5DhJ3pNLOOWdvD0/view?usp=drive_link">Resume</a>
+        </nav>
+        <a href="mailto:satyammishra8266@gmail.com" class="btn-talk">Let's Talk</a>
+    </header>
+    <section class="home">
+        <div class="content">
+            <h2>Hi, I'm <span>Satyam Kumar</span></h2>
+            <h4>Frontend Developer</h4>
+            <p>I consider myself as a responsible and orderly person. I can create Dynamic Front
+                End for visually appealing and user-friendly interfaces. Skilled in modern
+                frameworks like Bootstrap and advanced CSS with expertise in responsive design.
+                Passionate about creating engaging digital experiences and eager to contribute to
+                innovative projects.</p>
+            <div class="btn-group">
+                <a href="#" class="hireme">Hire Me</a>
+                <a href="#" class="seeproject">See Projects</a>
+            </div>
+
+
+        </div>
+        <div class="project">
+            <div class="cards">
+                <div class="card" data-aos="fade-in">
+                    <div class="title">Dice Roll Game</div>
+                    <div class="img"><img
+                            src="https://media.istockphoto.com/id/2155021655/vector/black-and-white-two-dice-vector-icon-and-illustration-gambling-and-games-of-chance-concept.jpg?s=612x612&w=0&k=20&c=nVLM_2dteCxHpwq9HEonkCnJQh4Dq8QpCoqWBNjjLSo="
+                            alt=""></div>
+                    <div class="desc">Made a game using react </div>
+                </div>
+                <div class="card" data-aos="fade-in">
+                    <div class="title">Spotify</div>
+                    <div class="img"><img
+                            src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-logo-spotify-symbol-3.png"
+                            alt=""></div>
+                    <div class="desc">Cloned Spotify using Bootstrap , HTML, CSS and JavaScript </div>
+                </div>
+                <div class="card" data-aos="fade-in">
+                    <div class="title">Netflix</div>
+                    <div class="img"><img
+                            src="https://images.ctfassets.net/y2ske730sjqp/6bhPChRFLRxc17sR8jgKbe/6fa1c6e6f37acdc97ff635cf16ba6fb3/Logos-Readability-Netflix-logo.png"
+                            alt=""></div>
+                    <div class="desc">Cloned Netflix version that allow user to add their playlist offline </div>
+                </div>
+                <div class="card" data-aos="fade-in">
+                    <div class="title">Hotstar</div>
+                    <div class="img"><img src="https://logowik.com/content/uploads/images/disney-hotstar3268.jpg"
+                            alt=""></div>
+                    <div class="desc">Cloned Hotstar for practice and experience. </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+    </section>
+    <div class="social-icons">
+
+
+
+        <a href="https://in.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://twitter.com/?lang=en"><i class="fa-brands fa-twitter"></i></a>
+
+    </div>
+
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            const navigation = document.querySelector('.navigation');
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth <= 907) {
+                    navigation.style.display = 'grid';
+                } else {
+                    navigation.style.display = 'flex';
+                }
+            });
+
+            // Check on initial load
+            if (window.innerWidth <= 907) {
+                navigation.style.display = 'grid';
+            } else {
+                navigation.style.display = 'flex';
+            }
+
+            document.querySelector('.menuimg').addEventListener('click', () => {
+                
+                
+                const navigation = document.querySelector('.navigation');
+                const marginLeft = getComputedStyle(navigation).marginLeft;
+
+                if (marginLeft === "0px") {
+                    navigation.style.marginLeft = "-100vw";
+                } else {
+                    navigation.style.marginLeft = "0";
+                }
+
+
+
+                console.log('menuclicked')
+
+
+                // ****
+                
+            })
+
+            
+        });
+
+        document.querySelector('.seeproject').addEventListener('click', () => {
+            let a = document.querySelector('.project');
+
+
+            if (window.getComputedStyle(a).display === 'none') {
+                a.style.display = 'block';
+            } else {
+                a.style.display = 'none';
+            }
+
+
+        })
+        document.querySelector('.hireme').addEventListener('click', () => {
+            alert('Tap on "About" to know my details');
+        })
+        document.querySelector('.soon ').addEventListener('click', () => {
+            alert('Coming Soon!');
+        })
+
+
+    </script>
+    <script>
+        // Select the SVG element with class 'menuimg'
+        let menuImg = document.querySelector('.menuimg');
+        
+        // Initialize a flag to track the state
+        let isTransformed = false;
+      
+        // Add a click event listener to toggle transformation
+        menuImg.addEventListener('click', function() {
+          if (!isTransformed) {
+            // Apply scale and rotation on first click
+            menuImg.style.transform = 'scale(1.5) rotate(90deg)';
+          } else {
+            // Reset to original state on second click
+            menuImg.style.transform = 'scale(1) rotate(0deg)';
+          }
+      
+          // Add smooth transition effect
+          menuImg.style.transition = 'transform 0.5s ease';
+      
+          // Toggle the state
+          isTransformed = !isTransformed;
+        });
+      </script>
+      
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+
+</html>
